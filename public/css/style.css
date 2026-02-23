@@ -1,0 +1,124 @@
+body {
+    background: linear-gradient(135deg,#141e30,#243b55);
+    color: white;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.navbar {
+    background: rgba(0,0,0,0.6);
+}
+
+/* ===== MEGA FOOTER ===== */
+.mega-footer {
+    background: linear-gradient(135deg,#141e30,#243b55);
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🌊 WAVE ANIMATION */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 120px;
+    background: url('https://svgshare.com/i/uHh.svg');
+    background-size: cover;
+    animation: waveAnim 8s linear infinite;
+    bottom: 0;
+    left: 0;
+    opacity: 0.4;
+}
+
+.wave2 {
+    animation-duration: 12s;
+    opacity: 0.2;
+}
+
+@keyframes waveAnim {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* BRAND */
+.footer-brand {
+    background: linear-gradient(45deg,#00f2fe,#4facfe);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* LINKS */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li {
+    margin-bottom: 8px;
+}
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-links a:hover {
+    color: #00c6ff;
+    padding-left: 5px;
+}
+
+/* FLOATING GLOW */
+.mega-footer::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle,#00c6ff,transparent);
+    top: -100px;
+    right: -100px;
+    opacity: 0.3;
+    animation: floatGlow 6s infinite alternate;
+}
+
+@keyframes floatGlow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(40px); }
+}
+
+/* LIVE CLOCK */
+.live-clock {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* BACK TO TOP */
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(45deg,#00c6ff,#0072ff);
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    color: white;
+    display: none;
+    cursor: pointer;
+    z-index: 999;
+}
+#topBtn:hover {
+    transform: scale(1.1);
+}
+
+/* LIGHT MODE */
+.light-mode {
+    background: #f4f4f4 !important;
+    color: black !important;
+}

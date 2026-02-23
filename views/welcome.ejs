@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: url('/images/ai.jpg') no-repeat center center/cover;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: zoomBg 20s infinite alternate ease-in-out;
+}
+
+/* SMOOTH BACKGROUND ZOOM EFFECT */
+@keyframes zoomBg {
+    0% { background-size: 100%; }
+    100% { background-size: 110%; }
+}
+
+/* LIGHT OVERLAY */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 0;
+}
+
+/* GLASS CARD */
+.welcome-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(0,0,0,0.6);
+    padding: 70px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    width: 420px;
+}
+
+/* BUTTON */
+.btn-start {
+    background: linear-gradient(45deg,#00c6ff,#0072ff);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.btn-start:hover {
+    transform: scale(1.08);
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: linear-gradient(45deg,#11998e,#38ef7d);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    z-index: 3;
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="/music/song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- WELCOME CARD -->
+<div class="welcome-card">
+
+    <!-- ✅ LOGOUT SUCCESS MESSAGE -->
+    <% if (typeof logoutMsg !== 'undefined') { %>
+        <div class="alert alert-success text-center">
+            You have been logged out successfully.
+        </div>
+    <% } %>
+
+    <h1>💻 Computer Management System</h1>
+    <p>Professional Sales & Service Platform</p>
+    <a href="/login" class="btn btn-start mt-4">Login</a>
+
+</div>
+
+<!-- MUSIC BUTTON -->
+<button class="music-btn" onclick="playMusic()">🔊 Play Music</button>
+
+<script>
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+    music.play();
+}
+</script>
+
+</body>
+</html>

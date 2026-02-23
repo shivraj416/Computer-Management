@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/dashboard">
+            💻 Computer System
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+
+            <div class="d-flex flex-wrap gap-2">
+
+                <a href="/dashboard" class="btn btn-outline-light btn-sm">Dashboard</a>
+
+                <a href="/products" class="btn btn-outline-info btn-sm">Products</a>
+
+                <a href="/customers" class="btn btn-outline-success btn-sm">Customers</a>
+
+                <a href="/services" class="btn btn-outline-warning btn-sm">Services</a>
+
+                <a href="/invoices" class="btn btn-outline-primary btn-sm">Invoices</a>
+
+                <!-- ✅ NEW BOOK SERVICE LINK -->
+                <a href="/book-service" class="btn btn-outline-secondary btn-sm">
+                    📅 Book Service
+                </a>
+
+                <!-- ✅ NEW APPOINTMENTS LINK (Admin View) -->
+                <a href="/appointments" class="btn btn-outline-light btn-sm">
+                    📋 Appointments
+                </a>
+
+                <a href="/contact" class="btn btn-outline-light btn-sm">Contact</a>
+
+                <!-- LOGOUT BUTTON -->
+                <button class="btn btn-danger btn-sm" onclick="confirmLogout()">
+                    🔓 Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<script>
+function confirmLogout() {
+    if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "/logout";
+    }
+}
+</script>
